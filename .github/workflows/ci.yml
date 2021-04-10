@@ -15,6 +15,7 @@ jobs:
           git config --local user.name "迷渡"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
+          sudo apt -y install ffmpeg
           sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
           sudo chmod a+rx /usr/local/bin/youtube-dl
           youtube-dl --config-location config.txt
